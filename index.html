@@ -16,3 +16,28 @@
                                     <i class="fas fa-clipboard-list icon" style="font-size:20px;"></i>
                                     <input class="input-field" type="text" name="reminder-title" id="reminder-title" placeholder="Add reminder">
                                 </div>
+                                <button type="submit">Add to Reminders</button>
+          </form>
+          <ul id="remind" class="reminders">
+
+          </ul>
+          <div id= "buttons">
+              <button class="save">Save</button>
+              <button class="clear">Clear</button>
+              <button class="tipBtn">Tips</button>
+          </div>
+      </div>
+
+      <div id = "overlay">
+         <a href="javascript:void(0)" class="closebtn">&times;</a>
+         <ul class="tips">
+             <li>Click on the pencil to hide or show input area</li>
+             <li>Type text into input area and press enter to add reminder to list</li>
+             <li>Hover over the reminder and click the on trash can to delete</li>
+             <li>Click the clear button to clear all reminders from list</li>
+             <li>Click the Save button to save your reminders to access them later even if you exit the browser </li>
+          </ul>
+
+      </div>
+      <script src="script.js"></script>
+  </body>
