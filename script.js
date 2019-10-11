@@ -2,6 +2,7 @@ var addToReminderList = document.querySelector('#add-reminder');
 var form = document.getElementById("add-reminder");
 var reminderTitle = document.querySelector('#reminder-title');
 var reminderDate = document.querySelector('#reminder-date');
+var reminderTime = document.querySelector('#reminder-time');
 var reminder = document.querySelector('#remind');
 var ul = document.querySelector("ul");
 var container = document.querySelector("div");
@@ -38,7 +39,9 @@ addToReminderList.addEventListener('submit', function (event) {
 
 	if (reminderTitle.value.length < 1) return;
 
-  reminder.innerHTML+='<li><span><i class="fas fa-trash-alt"></i></span>' + reminderTitle.value +'  : '+ reminderDate.value +'</li></pre>';
+  reminder.innerHTML+='<li><span><i class="fas fa-trash-alt"></i></span><i class="fa fa-bell"></i>  ' +
+  reminderTitle.value +'<p style="margin-top:-7px;padding-left:25px"><i class="fa fa-clock"></i>&nbsp&nbsp'+
+  reminderDate.value +'&nbsp&nbspTime:  '+reminderTime.value+'</li></p>';
 
   form.reset();
   deletereminder();
