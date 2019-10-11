@@ -109,3 +109,21 @@ deletereminder();
 
 //load reminder
 loadreminder();
+// Let's check if the browser supports notifications
+
+function notify() {
+  new Notification("Hello world!");
+}
+if (!("Notification" in window)) {
+  alert("This browser does not support desktop notification");
+}
+else if (Notification.permission === "granted") {
+  notify();
+} else if (Notification.permission !== "denied") {
+  Notification.requestPermission().then(function(permission) {
+    // If the user accepts, let's create a notification
+    if (permission === "granted") {
+      notify();
+    }
+  });
+}
