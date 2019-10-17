@@ -109,7 +109,7 @@ button:hover {
     font-size: 30px;
     color: #818181;
     background-color: white;
-  text-align: justify;
+  display: block;
 }
 .reminders{
     list-style-type: none;
