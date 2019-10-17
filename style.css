@@ -108,7 +108,6 @@ button:hover {
     list-style-type:circle;
     font-size: 30px;
     color: #818181;
-    display: block;
     background-color: white;
     text-align: justify;
 }
