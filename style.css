@@ -110,6 +110,7 @@ button:hover {
     color: #818181;
     background-color: white;
   display: block;
+  text-align: justify;
 
 }
 .reminders{
@@ -198,7 +199,7 @@ button:hover {
     outline: none;
   }
 /*  if screen size less than 450px, resize tips lists and close btn so they don't overlap */
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 450px,max-width:450px) {
     .overlay a {
         font-size: 20px
 
