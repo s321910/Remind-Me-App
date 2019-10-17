@@ -110,7 +110,7 @@ button:hover {
     color: #818181;
     background-color: white;
   display: block;
-  text-align: justify;
+
 }
 .reminders{
     list-style-type: none;
