@@ -199,7 +199,7 @@ button:hover {
     outline: none;
   }
 /*  if screen size less than 450px, resize tips lists and close btn so they don't overlap */
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 600px) {
     .overlay a {
         font-size: 20px
     }
@@ -208,6 +208,7 @@ button:hover {
         top: 15px;
         right: 35px;
         text-align: center;
+        align-content: center;
     }
     #reminder{
         width:100%;
