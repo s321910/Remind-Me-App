@@ -108,10 +108,8 @@ button:hover {
     list-style-type:circle;
     font-size: 30px;
     color: #818181;
-    display: block;
     background-color: white;
     text-align: justify;
-    align-items: center;
 }
 .reminders{
     list-style-type: none;
@@ -204,11 +202,10 @@ button:hover {
         font-size: 20px
     }
     .overlay .closebtn {
-        font-size: 5em;
-        top: 1.5em;
-        right: 2em;
-        text-align: justify;
-        align-content: flex-start;
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+
     }
     #reminder{
         width:100%;
