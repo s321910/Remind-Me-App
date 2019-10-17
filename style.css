@@ -104,9 +104,9 @@ button:hover {
     cursor: pointer;
 }
 #overlay li{
-    padding: 8px;
+    padding: 1em;
     list-style-type:circle;
-    font-size: 30px;
+    font-size: 5em;
     color: #818181;
     display: block;
     background-color: white;
