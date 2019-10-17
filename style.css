@@ -207,8 +207,8 @@ button:hover {
         font-size: 5em;
         top: 1.5em;
         right: 2em;
-        text-align: center;
-        align-content: center;
+        text-align: justify;
+        align-content: flex-start;
     }
     #reminder{
         width:100%;
