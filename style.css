@@ -204,6 +204,9 @@ button:hover {
         font-size: 20px
 
     }
+    .overlay li{
+      text-align: center;
+    }
     .overlay .closebtn {
         font-size: 40px;
         top: 15px;
