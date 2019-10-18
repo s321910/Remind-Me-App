@@ -199,14 +199,12 @@ button:hover {
     outline: none;
   }
 /*  if screen size less than 450px, resize tips lists and close btn so they don't overlap */
-@media screen and (max-height: 450px,max-width:450px) {
+@media screen and (max-height: 450px) {
     .overlay a {
         font-size: 20px
 
     }
-    .overlay li{
-      text-align: center;
-    }
+    
     .overlay .closebtn {
         font-size: 40px;
         top: 15px;
