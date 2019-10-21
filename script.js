@@ -15,7 +15,6 @@ var tipsBtn = document.querySelector(".tipBtn");
 var closeBtn = document.querySelector(".closeBtn");
 var overlay = document.getElementById("overlay")
 
-
 //function to delete reminder if delete span is clicked.
 function deletereminder(){
   for(let span of spans){
@@ -32,21 +31,46 @@ function loadreminder(){
     ul.innerHTML = localStorage.getItem('reminderList');
     deletereminder();
   }
+  console.log(today,reminderDate.value,"**");
+if(!window.Notification) {
+	console.log('Browser does not support notifications.');
+} else {
+  console.log('We in', reminderDate.value);
+  if (Notification.permission === 'granted') {
+        // show notification here
+        var notify = new Notification('Notification!', {
+          body: 'You have a new notification!',
+        });
+    } else {
+        // request permission from user
+        Notification.requestPermission().then(function(p) {
+           if(p === 'granted') {
+               // show notification here
+           } else {
+               console.log('User blocked notifications.');
+           }
+        }).catch(function(err) {
+            console.error(err);
+        });
+    }
+
+}
 }
 
 addToReminderList.addEventListener('submit', function (event) {
-  event.preventDefault();
-
 	if (reminderTitle.value.length < 1) return;
-
-  reminder.innerHTML+='<li><span><i class="fas fa-trash-alt"></i></span><i class="fa fa-bell"></i>  ' +
-  reminderTitle.value +'<p style="margin-top:-7px;padding-left:25px"><i class="fa fa-clock"></i>&nbsp&nbsp'+
-  reminderDate.value +'&nbsp&nbspTime:  '+reminderTime.value+'</li></p>';
+  reminder.innerHTML+='<li><span><i class="fas fa-trash-alt"></i></span><i class="fa fa-bell"></i><div style="padding-left:8px;" Reminder Title:</div>' +
+  reminderTitle.value +'<p style="margin-top:-7px;padding-left:25px"><i class="fa fa-calender"></i> Date:'+
+  reminderDate.value +'<i class="fa fa-clock"></i>Time:'+reminderTime.value+'</li></p>';
 
   form.reset();
   deletereminder();
-
 });
+date = new Date().getDate();
+month = new Date().getMonth() + 1;
+year = new Date().getFullYear();
+today = year + '-' + month + '-' + date;
+
 
 addToReminderList.addEventListener('submit', function (event) {
 	event.preventDefault();
@@ -83,7 +107,6 @@ pencil.addEventListener('click', function(){
 //save reminderlist state so user can access it later
 saveBtn.addEventListener('click',function(){
   localStorage.setItem('reminderList',ul.innerHTML );
-
 });
 
 //clear all reminder when clear button is clicked
@@ -109,21 +132,3 @@ deletereminder();
 
 //load reminder
 loadreminder();
-// Let's check if the browser supports notifications
-
-function notify() {
-  new Notification("Hello world!");
-}
-if (!("Notification" in window)) {
-  alert("This browser does not support desktop notification");
-}
-else if (Notification.permission === "granted") {
-  notify();
-} else if (Notification.permission !== "denied") {
-  Notification.requestPermission().then(function(permission) {
-    // If the user accepts, let's create a notification
-    if (permission === "granted") {
-      notify();
-    }
-  });
-}
